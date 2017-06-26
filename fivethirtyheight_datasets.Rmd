@@ -1,0 +1,81 @@
+---
+title: "Some datasets from FiveThirtyHeight"
+author: "olivier.vondach@obya.ch"
+date: "25/06/2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
+```
+
+## Synopsis
+
+This document presents plots based on information contained inside a selection of tidy datasets provided by the FiveThirtyHeight website and associated to some articles I felt sensitive to. The tool of choice is the plotly R package.
+
+- [FiveThiryHeight](https://fivethirtyeight.com/)
+- [Wikipedia](https://en.wikipedia.org/wiki/FiveThirtyEight)
+- [Datasets](https://www.kaggle.com/fivethirtyeight/fivethirtyeight)
+- [GitHub](https://github.com/fivethirtyeight/data)
+
+```{r, echo = FALSE}
+library(plotly)
+library(dplyr)
+```
+
+## [Where Do People Drink The Most Beer, Wine And Spirits?](https://fivethirtyeight.com/datalab/dear-mona-followup-where-do-people-drink-the-most-beer-wine-and-spirits/)
+
+```{r beer_wine_spirits, echo=FALSE}
+bws_data <- read.csv("drinks.csv")
+bws_data[,"country"] <- as.character(bws_data[,"country"])
+
+beer_top.5 <- bws_data %>% select(country, beer_servings) %>% arrange(desc(beer_servings)) %>% slice(1:5)
+wine_top.5 <- bws_data %>% select(country, wine_servings) %>% arrange(desc(wine_servings)) %>% slice(1:5)
+spirit_top.5 <- bws_data %>% select(country, spirit_servings) %>% arrange(desc(spirit_servings)) %>% slice(1:5)
+pure_alcohol_top.5 <- bws_data %>% select(country, total_litres_of_pure_alcohol) %>%
+    mutate(total_pure_alcohol = as.integer(total_litres_of_pure_alcohol * 10)) %>%
+    arrange(desc(total_pure_alcohol)) %>% slice(1:5)
+
+p_bws <- plot_ly(type="scatter", mode="markers") %>%
+    add_trace(data=beer_top.5, x=~country, y=~beer_servings, size=~beer_servings, name = 'beer') %>%
+    add_trace(data=wine_top.5, x=~country, y=~wine_servings, size=~wine_servings, name = 'wine') %>%
+    add_trace(data=spirit_top.5, x=~country, y=~spirit_servings, size=~spirit_servings, name = 'spirit')
+
+p_alcohol <- plot_ly(type="scatter", mode="markers") %>%
+    add_trace(data=pure_alcohol_top.5, x=~country,
+              y=~total_pure_alcohol,
+              size=~total_pure_alcohol, name = 'pure alcohol')
+    
+subplot(p_bws, p_alcohol, nrows = 2, shareX = TRUE) %>% 
+    layout(title = '', xaxis = list(title = ""), 
+           yaxis = list(title = "servings [#]"), 
+           yaxis2 = list(title = "pure alcohol [cl]"))
+```
+
+## [Some People Are Too Superstitious To Have A Baby On Friday The 13th](https://fivethirtyeight.com/features/some-people-are-too-superstitious-to-have-a-baby-on-friday-the-13th/)
+
+```{r friday_13th_effect, echo=FALSE}
+f13_data <- read.csv("US_births_2000-2014_SSA.csv")
+f13_dow <- summarize(group_by(f13_data, day_of_week), births=as.integer(mean(births)))
+f13_dom <- summarize(group_by(f13_data, date_of_month), births=as.integer(mean(births)))
+
+p_dom <- plot_ly(data=f13_dom, x=~date_of_month, y=~births, type = 'scatter', mode = 'lines', name='day of month')
+p_dow <- plot_ly(data=f13_dow, x=~day_of_week, y=~births, type = 'scatter', mode = 'lines', name='day of week')
+subplot(p_dom, p_dow, nrows = 1, shareY = TRUE) %>% layout(yaxis = list(title = 'Average of births'))
+```
+
+## [Higher Rates Of Hate Crimes Are Tied To Income Inequality](https://fivethirtyeight.com/features/higher-rates-of-hate-crimes-are-tied-to-income-inequality/)?
+
+```{r hate_criminality_income_inequality, echo=FALSE}
+hcii_data <- read.csv("hate_crimes.csv")
+hcii_data[,"state"] <- as.character(hcii_data[,"state"])
+
+p_crimes <- plot_ly(data=hcii_data, y=~state, x=~hate_crimes_per_100k_splc, type="bar", name="hate crimes")
+p_income <- plot_ly(data=hcii_data, y=~state, x=~median_household_income, 
+type="scatter", size=~median_household_income, name="household income")
+
+subplot(p_crimes, p_income, nrows = 1, shareY = TRUE) %>% 
+    layout(title = '', yaxis = list(title = ""),
+           xaxis = list(title = "annual average [100k]"), 
+           xaxis2 = list(title = "median income [$]"))
+```
