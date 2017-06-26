@@ -12,7 +12,7 @@ This repository gathers the artefacts generated during the assignments for the D
 - [R Markdown](https://vondacho.github.io/coursera-datascience-data-products/swiss_public_transport_stops.Rmd)
 - [RPubs](http://www.rpubs.com/vondacho/swiss_public_transport_stops)
 
-## Assignment 2 - plot_ly R package
+## Assignment 2 - plotly R package
 
 - [HTML presentation](https://vondacho.github.io/coursera-datascience-data-products/fivethirtyheight_datasets.html)
 - [R Markdown](https://vondacho.github.io/coursera-datascience-data-products/fivethirtyheight_datasets.Rmd)
