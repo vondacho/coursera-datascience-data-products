@@ -21,4 +21,5 @@ This repository gathers the artefacts generated during the assignments for the D
 ## Assignment 3 - Shiny application and presentation pitch
 
 - [HTML Presentation](https://vondacho.github.io/coursera-datascience-data-products/human_activity_monitoring/presentation-rpubs.html#/4)
+- [RPubs](http://rpubs.com/vondacho/har_data_product)
 - [Shiny Application](https://vondacho.shinyapps.io/human_activity_monitoring)
