@@ -12,7 +12,7 @@ The website is [https://vondacho.shinyapps.io/human_activity_monitoring/](https:
 If one has the code `ui.R` and `server.R` of the app locally with `shiny` package loaded, simply run the command `runApp(appDir)`, where `appDir` is a directory containing `server.R`, plus, either `ui.R` or a www directory that contains the file index.html.
 
 ### Run the app locally using command `runGitHub()`
-The app has been uploaded on Github at [https://github.com/vondacho/coursera-datascience-data-products/human_activity_monitoring](https://github.com/vondacho/coursera-datascience-data-products/human_activity_monitoring). One can run the shiny app by typing the command `runGitHub("vondacho/coursera-datascience-data-products/human_activity_monitoring")` in R.
+The app has been uploaded on Github at [https://github.com/vondacho/coursera-datascience-data-products/tree/master/human_activity_monitoring](https://github.com/vondacho/coursera-datascience-data-products/tree/master/human_activity_monitoring). One can run the shiny app by typing the command `runGitHub("https://github.com/vondacho/coursera-datascience-data-products/tree/master/human_activity_monitoring")` in R.
 
 
 
@@ -26,7 +26,7 @@ In a first tab this app proposes a simple exploration through the HAR dataset pr
 
 In a second tab this app proposes a simple prediction tool based on an model previously built and embedded into the deployment unit. The model is loaded at the start of the app. Users can submit the simulated values of the captors and get a class of activity as a prediction result.
 
-This part is still under construction. The R code for the prediction can be found on GitHub at [https://github.com/vondacho/coursera-datascience-data-products/human_activity_monitoring/prediction.R](https://github.com/vondacho/coursera-datascience-data-products/human_activity_monitoring/prediction.R)
+This part is still under construction. The R code for the prediction can be found on GitHub at [https://github.com/vondacho/coursera-datascience-data-products/tree/master/human_activity_monitoring/prediction.R](https://github.com/vondacho/coursera-datascience-data-products/tree/master/human_activity_monitoring/prediction.R)
 
 
 
