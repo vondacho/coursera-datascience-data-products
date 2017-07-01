@@ -3,7 +3,7 @@ library(plotly)
 library(caret)
 
 loadData <- function() {
-    read.csv("~/Documents/workspace/labor/education/coursera-data-science/9_developing_data_products/week_9_4/assignment/human_activity_monitoring/dataset-har-PUC-Rio-ugulino.csv",
+    read.csv("https://vondacho.github.io/coursera-datascience-data-products/human_activity_monitoring/dataset-har-PUC-Rio-ugulino.csv",
         na.strings = c("NA",""), sep= ";")
 }
 
