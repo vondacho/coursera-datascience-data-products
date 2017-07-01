@@ -1,0 +1,89 @@
+---
+title: "Swiss public transport stops"
+author: "Olivier von Dach"
+date: "18/06/2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning=FALSE, message=FALSE)
+```
+
+## Synopsis
+
+The basic geo-data set for public transport stops comprises public transport stops in Switzerland and additional selected geo-referenced public transport locations that are of operational or structural importance (operating points).
+
+The data can be downloaded [here](https://opendata.swiss/en/dataset/haltestellen-des-offentlichen-verkehrs)
+
+## Data processing
+
+### Loading
+
+```{r}
+data <- read.csv("PointExploitation.csv")
+```
+
+### Short analysis
+
+```{r}
+dim(data)
+names(data)
+table(data$MoyenTransport)
+```
+
+### Coordinate transformation
+
+The locations of the stops are provided using the CH1903 Swiss coordinate system. A mathematical transformation has to be applied since GPS (WGS84) coordinates are required for the plotting.  
+
+The source code for the transformation in R language is [here](https://github.com/ValentinMinder/Swisstopo-WGS84-LV03/blob/master/scripts/r/WGS84_CH1903.R)
+
+```{r}
+source("WGS84_CH1903.R")
+```
+
+### Cleaning
+
+```{r, echo=FALSE}
+library(dplyr)
+```
+
+Cleanup of column names, selection of meaningful columns and conversion of coordinates.
+
+```{r}
+df <- data %>% 
+    select(Nom, MoyenTransport, y_Coord_Est, x_Coord_Nord) %>% 
+    mutate(Stop=Nom, Kind=MoyenTransport,
+           Latitude=CH.to.WGS.lat(y_Coord_Est, x_Coord_Nord), 
+           Longitude=CH.to.WGS.lng(y_Coord_Est, x_Coord_Nord)) %>% 
+    select(-MoyenTransport, -Nom, -y_Coord_Est, -x_Coord_Nord)
+head(df)
+```
+
+## Data plotting
+
+```{r, echo=FALSE}
+library(leaflet)
+```
+
+### Funicular stops
+
+```{r}
+df %>% 
+    select(-Stop) %>% 
+    filter(Kind=='Funiculaire') %>%
+    leaflet() %>%
+    addTiles() %>%
+    addCircleMarkers(clusterOptions = markerClusterOptions())
+```
+
+### Cableway stops
+
+```{r}
+df %>% 
+     select(-Stop) %>% 
+     filter(Kind=='Telepherique') %>%
+     leaflet() %>%
+     addTiles() %>%
+     addCircleMarkers(clusterOptions = markerClusterOptions())
+```
+

@@ -8,12 +8,17 @@ This repository gathers the artefacts generated during the assignments for the D
 
 ## Assignment 1 - leaflet R package
 
-- [HTML presentation](https://vondacho.github.io/coursera-datascience-data-products/swiss_public_transport_stops.html)
-- [R Markdown](https://vondacho.github.io/coursera-datascience-data-products/swiss_public_transport_stops.Rmd)
+- [HTML presentation](https://vondacho.github.io/coursera-datascience-data-products/swiss_public_transport_stops/swiss_public_transport_stops.html)
+- [R Markdown](https://vondacho.github.io/coursera-datascience-data-products/swiss_public_transport_stops/swiss_public_transport_stops.Rmd)
 - [RPubs](http://www.rpubs.com/vondacho/swiss_public_transport_stops)
 
 ## Assignment 2 - plotly R package
 
-- [HTML presentation](https://vondacho.github.io/coursera-datascience-data-products/fivethirtyheight_datasets.html)
-- [R Markdown](https://vondacho.github.io/coursera-datascience-data-products/fivethirtyheight_datasets.Rmd)
+- [HTML presentation](https://vondacho.github.io/coursera-datascience-data-products/fivethirtyheight_datasets_plots/fivethirtyheight_datasets.html)
+- [R Markdown](https://vondacho.github.io/coursera-datascience-data-products/fivethirtyheight_datasets_plots/fivethirtyheight_datasets.Rmd)
 - [RPubs](http://www.rpubs.com/vondacho/fivethirtyheight_datasets_plots)
+
+## Assignment 3 - Shiny application and presentation pitch
+
+- [HTML Presentation](https://vondacho.github.io/coursera-datascience-data-products/human_activity_monitoring/human_activity_monitoring.html)
+- [Shiny Application](https://vondacho.github.io/coursera-datascience-data-products/human_activity_monitoring/human_activity_monitoring.html)
