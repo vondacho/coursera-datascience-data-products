@@ -14,8 +14,8 @@ This repository gathers the artefacts generated during the assignments for the D
 
 ## Assignment 2 - plotly R package
 
-- [HTML presentation](https://vondacho.github.io/coursera-datascience-data-products/fivethirtyheight_datasets_plots/fivethirtyheight_datasets.html)
-- [R Markdown](https://vondacho.github.io/coursera-datascience-data-products/fivethirtyheight_datasets_plots/fivethirtyheight_datasets.Rmd)
+- [HTML presentation](https://vondacho.github.io/coursera-datascience-data-products/fivethirtyheight_datasets/fivethirtyheight_datasets.html)
+- [R Markdown](https://vondacho.github.io/coursera-datascience-data-products/fivethirtyheight_datasets/fivethirtyheight_datasets.Rmd)
 - [RPubs](http://www.rpubs.com/vondacho/fivethirtyheight_datasets_plots)
 
 ## Assignment 3 - Shiny application and presentation pitch
