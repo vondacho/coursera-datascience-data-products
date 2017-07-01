@@ -3,16 +3,22 @@
 This documentation provides a general guide to use the shiny app [Human Activity Monitoring](https://vondacho.shinyapps.io/human_activity_monitoring/).
 
 ## Where and How to Run the App
+
 To run and use this app, one can consider the following different ways.
 
 ### Go to the website hosted by **shinyapps.io** of Rstudio
+
 The website is [https://vondacho.shinyapps.io/human_activity_monitoring/](https://vondacho.shinyapps.io/human_activity_monitoring/).
 
-### Run the app locally using command `runApp()` 
+### Run the app locally using command `runApp()`
+
 If one has the code `ui.R` and `server.R` of the app locally with `shiny` package loaded, simply run the command `runApp(appDir)`, where `appDir` is a directory containing `server.R`, plus, either `ui.R` or a www directory that contains the file index.html.
 
 ### Run the app locally using command `runGitHub()`
-The app has been uploaded on Github at [https://github.com/vondacho/coursera-datascience-data-products/tree/master/human_activity_monitoring](https://github.com/vondacho/coursera-datascience-data-products/tree/master/human_activity_monitoring). One can run the shiny app by typing the command `runGitHub("https://github.com/vondacho/coursera-datascience-data-products/tree/master/human_activity_monitoring")` in R.
+
+The app has been uploaded on Github at [https://github.com/vondacho/coursera-datascience-data-products/tree/master/human_activity_monitoring](https://github.com/vondacho/coursera-datascience-data-products/tree/master/human_activity_monitoring).
+
+One can run the shiny app by typing the command `runGitHub("https://github.com/vondacho/coursera-datascience-data-products/tree/master/human_activity_monitoring")` in R.
 
 
 
