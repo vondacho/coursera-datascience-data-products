@@ -16,17 +16,17 @@ The app has been uploaded on Github at [https://github.com/vondacho/coursera-dat
 
 
 
-## Description and Example of Using the App
+## Description of the App
 
 ### Dataset exploration
 
-In a first tab this app proposes a simple exploration through the HAR dataset provided by [http://groupware.les.inf.puc-rio.br/har](http://groupware.les.inf.puc-rio.br/har). Users can select a member of the group of people engaged for the experimentation and one of the four captors used for the measures. The application presents a reactive 3d scatter plot using the Plotly library and a summary of the filtered data. 
+In a first tab this app proposes a simple exploration through the HAR dataset provided by [http://groupware.les.inf.puc-rio.br/har](http://groupware.les.inf.puc-rio.br/har). Users can select a member of the group of people engaged for the experimentation and one of the four captors used for the measures. The appl presents a reactive 3d scatter plot using the Plotly library and a summary of the filtered data. 
 
 ### Activity prediction
 
-In a second tab this app proposes a simple prediction tool based on an model previously built and embedded into the deployment unit. The model is loaded at the start of the application. Users can submit the simulated values of the captors and get a class of activity as a prediction result.
+In a second tab this app proposes a simple prediction tool based on an model previously built and embedded into the deployment unit. The model is loaded at the start of the app. Users can submit the simulated values of the captors and get a class of activity as a prediction result.
 
-This part is still under construction.
+This part is still under construction. The R code for the prediction can be found on GitHub at [https://github.com/vondacho/coursera-datascience-data-products/human_activity_monitoring/prediction.R](https://github.com/vondacho/coursera-datascience-data-products/human_activity_monitoring/prediction.R)
 
 
 
