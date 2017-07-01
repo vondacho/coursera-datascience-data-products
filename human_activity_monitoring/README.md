@@ -21,12 +21,13 @@ The app has been uploaded on Github at [https://github.com/vondacho/coursera-dat
 One can run the shiny app by typing the command `runGitHub("https://github.com/vondacho/coursera-datascience-data-products/tree/master/human_activity_monitoring")` in R.
 
 
-
 ## Description of the App
+
+This app proposes data exploration and class prediction on the HAR dataset provided by [http://groupware.les.inf.puc-rio.br/har](http://groupware.les.inf.puc-rio.br/har). 
 
 ### Dataset exploration
 
-In a first tab this app proposes a simple exploration through the HAR dataset provided by [http://groupware.les.inf.puc-rio.br/har](http://groupware.les.inf.puc-rio.br/har). Users can select a member of the group of people engaged for the experimentation and one of the four captors used for the measures. The appl presents a reactive 3d scatter plot using the Plotly library and a summary of the filtered data. 
+In a first tab this app proposes a simple exploration based on two criteria. Users can select a member of the group of people engaged for the experimentation and one of the four captors used for the measures. The appl presents a reactive 3d scatter plot using the Plotly library and a summary of the filtered data. 
 
 ### Activity prediction
 
