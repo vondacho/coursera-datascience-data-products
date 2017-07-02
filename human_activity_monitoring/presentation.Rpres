@@ -27,8 +27,8 @@ The inputs or parameters users can specify during exploration include
 
 The inputs or parameters users can specify during prediction include
 
-- The simulated values (x,y,z) of the four captors for activity class prediction
-- **Note: one has to press the Sumbit button first in order to launch the prediction of the activity class**.
+- The simulated values (x,y,z) of the four captors
+- The simulated value of the body mass index
 
 The interface of the Shiny App (exploration)
 ========================================================
