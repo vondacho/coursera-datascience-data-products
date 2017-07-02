@@ -31,9 +31,9 @@ In a first tab this app proposes a simple exploration based on two criteria. Use
 
 ### Activity prediction
 
-In a second tab this app proposes a simple prediction tool based on an model previously built and embedded into the deployment unit. The model is loaded at the start of the app. Users can submit the simulated values of the captors and get a class of activity as a prediction result.
+In a second tab this app proposes a simple prediction tool based on an model previously built and embedded into the deployment unit. The model is loaded at the start of the app. Users can choose the simulated values of the captors and the body mass index and get a class of activity as a prediction result.
 
-This part is still under construction. The R code for the prediction can be found on GitHub at [https://github.com/vondacho/coursera-datascience-data-products/tree/master/human_activity_monitoring/prediction.R](https://github.com/vondacho/coursera-datascience-data-products/tree/master/human_activity_monitoring/prediction.R)
+The R code for the prediction model can be found on GitHub at [https://github.com/vondacho/coursera-datascience-data-products/tree/master/human_activity_monitoring/prediction.R](https://github.com/vondacho/coursera-datascience-data-products/tree/master/human_activity_monitoring/prediction.R)
 
 
 
